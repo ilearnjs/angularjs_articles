@@ -1,0 +1,14 @@
+<div class="todo-new">
+	<a href ui-sref="todo.new">Add new</a>	
+</div>
+
+<div
+	ng-if="!$ctrl.noData"
+>
+	<todo-list-component
+		list="$ctrl.todoList" 
+		on-delete="$ctrl.deleteTodo($event)" 
+		on-toggle="$ctrl.toggleTodo($event)"
+		on-sort="$ctrl.sort($event)"
+	></todo-list-component>
+</div>

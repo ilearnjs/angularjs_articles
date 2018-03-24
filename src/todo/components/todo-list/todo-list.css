@@ -1,0 +1,18 @@
+.todo-filters {
+	margin: 10px 0;
+}
+
+.todo-list-header .checkbox {
+	width: 20px;
+    display: inline-block;
+}
+
+.todo-list-header .created {
+	width: 100px;
+    display: inline-block;
+}
+
+.todo-list-header .title {
+	width: 200px;
+    display: inline-block;
+}

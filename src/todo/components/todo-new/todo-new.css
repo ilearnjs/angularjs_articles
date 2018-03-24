@@ -1,0 +1,8 @@
+.todo-new-form {
+	margin: 20px;
+}
+
+.todo-new-form .submit {
+	display: block;
+	margin: 10px 0;
+}

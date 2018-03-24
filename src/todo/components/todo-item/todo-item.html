@@ -1,0 +1,36 @@
+<div ng-class="{'editing': $ctrl.editing, 'completed': $ctrl.completed}">
+	<div
+		class="view"
+		ng-dblclick="$ctrl.enableEditing()"
+	>
+		<input
+			class="checkbox"
+			type="checkbox"
+			ng-checked="$ctrl.completed"
+			ng-click="$ctrl.toggleTodo()"
+			id="checkbox-{{$ctrl.item.id}}"
+		>
+		<label
+			for="checkbox-{{$ctrl.item.id}}"
+		>
+			<sapn class="created">
+				{{$ctrl.item.created.toLocaleDateString()}}
+			</sapn>
+			<sapn class="title">
+				{{$ctrl.item.title}}
+			</sapn>
+		</label>
+		<button
+			ui-sref="todo.edit({todoId: $ctrl.item.id})"
+			class="edit"
+		>
+			Edit
+		</button>
+		<button
+			class="delete"
+			ng-click="$ctrl.deleteTodo()"
+		>
+			Delete
+		</button>
+	</div>
+</div>

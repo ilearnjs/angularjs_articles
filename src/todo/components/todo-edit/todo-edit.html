@@ -1,0 +1,34 @@
+<div>
+	<form
+		novalidate
+		name="todoEditForm"
+		class="todo-edit-form"
+		ng-submit="$ctrl.submitForm(todoEditForm.$valid)"
+	>
+		<label>Title</label>
+		<input
+			name="title"
+			class="title"
+			ng-model="$ctrl.editTodo.title"
+			required
+			ng-minlength="5"
+		/>
+		<span 
+			ng-show="$ctrl.submitted && todoEditForm.title.$error.required"
+			class="validation-error"
+		>
+			Title is required.
+		</span>
+		<span 
+			ng-show="$ctrl.submitted && todoEditForm.title.$error.minlength"
+			class="validation-error"
+		>
+			Title is too short (min 5 symbols).
+		</span>
+		<input
+			type="submit"
+			value="Edit"
+			class="submit"
+		/>
+	</form>
+</div>

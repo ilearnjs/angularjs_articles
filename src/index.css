@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+}
+
+.todo-app {
+	display: block;
+	width: 600px;
+    margin: auto;
+}
+
+.validation-error {
+	margin: 10px 0;
+	color: red;
+}

@@ -1,0 +1,37 @@
+<div class="todo-filters">
+	<a href ui-sref="todo.all" ui-sref-active="selected">All</a>
+	<a href ui-sref="todo.active" ui-sref-active="selected">Active</a>
+	<a href ui-sref="todo.completed" ui-sref-active="selected">Completed</a>
+</div>
+
+<div ng-if="$ctrl.list.length">
+	<div class="todo-list-header">
+		<span class="checkbox">
+		</span>
+		<span
+			ng-click="$ctrl.sort({field: 'created', direction: -1})"
+			class="created"
+		>
+			Created
+		</span>
+		<span
+			ng-click="$ctrl.sort({field: 'title', direction: 1})"
+			class="title"
+		>
+			Title
+		</span>
+	</div>
+
+	<div class="todo-list">
+		<div ng-repeat="todo in $ctrl.list">
+		<todo-item-component
+				item="todo"
+				completed="todo.completed"
+				on-delete="$ctrl.deleteTodo($event)"
+				on-update="$ctrl.updateTodo($event)"
+				on-toggle="$ctrl.toggleTodo($event)"
+			></todo-item-component>
+		</div>
+	</div>
+</div>
+  
