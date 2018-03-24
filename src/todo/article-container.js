@@ -25,7 +25,7 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 
 	self.pagination = {
 		currentPage: 1,
-		itemsPerPage: 1
+		itemsPerPage: 5
 	};
 
 	self.$onInit = () => {
@@ -93,8 +93,8 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 	}
 
 	function getPageItems(articleList, currentPage, itemsPerPage) {
-		if (articleList.length < currentPage * itemsPerPage) {
-			currentPage = 1;
+		if (articleList.length < (itemsPerPage * (currentPage - itemsPerPage) + 1)) {
+			self.pagination.currentPage = currentPage = 1;
 		}
 
 		return articleList.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);

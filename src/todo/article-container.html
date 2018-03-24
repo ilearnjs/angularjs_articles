@@ -6,6 +6,7 @@
 	ng-if="!$ctrl.noData"
 >
 	<article-list-component
+		sort-field="$ctrl.sortField"
 		list="$ctrl.articleList.articleList" 
 		on-delete="$ctrl.deleteArticle($event)" 
 		on-sort="$ctrl.sort($event)"

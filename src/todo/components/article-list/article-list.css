@@ -4,10 +4,22 @@ article-list-component .article-filters {
 
 article-list-component .article-list-header .created {
 	width: 100px;
-    display: inline-block;
+	display: inline-block;
 }
 
 article-list-component .article-list-header .title {
 	width: 200px;
-    display: inline-block;
+	display: inline-block;
+}
+
+article-list-component .article-list-header .active {
+	border: 1px solid black;
+}
+
+article-list-component .article-list-header .active.acs:after {
+	content: "A-Z";
+}
+
+article-list-component .article-list-header .active.desc:after {
+	content: "Z-A";
 }

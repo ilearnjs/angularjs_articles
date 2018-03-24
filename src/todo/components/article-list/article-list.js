@@ -6,6 +6,7 @@ angular.module('app')
 		template: require('./article-list.html'),
 		bindings: {
 			list: '<',
+			sortField: '<',
 			onDelete: '&',
 			onSort: '&',
 		}
@@ -29,4 +30,14 @@ function articleList() {
 			}
 		});
 	};
+
+	self.getClasses = (field) => {
+		if (self.sortField.field === field) {
+			const direction = self.sortField.direction > 0
+				? 'acs'
+				: 'desc';
+
+			return `active ${direction}`;
+		}
+	}
 }

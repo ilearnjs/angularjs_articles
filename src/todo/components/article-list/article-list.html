@@ -10,12 +10,14 @@
 		<span
 			ng-click="$ctrl.sort({field: 'created', direction: -1})"
 			class="created"
+			ng-class="$ctrl.getClasses('created')"
 		>
 			Created
 		</span>
 		<span
 			ng-click="$ctrl.sort({field: 'title', direction: 1})"
 			class="title"
+			ng-class="$ctrl.getClasses('title')"
 		>
 			Title
 		</span>

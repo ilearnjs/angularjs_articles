@@ -22,6 +22,30 @@ function articleStore() {
 			title: 'Unit tests',
 			content: 'Some news about Unut tests.',
 			created: new Date('3/30/2018')
+		},
+		{
+			id: 4,
+			title: 'Unit tests4',
+			content: 'Some news about Unut tests.',
+			created: new Date('3/30/2018')
+		},
+		{
+			id: 5,
+			title: 'Unit tests5',
+			content: 'Some news about Unut tests.',
+			created: new Date('3/30/2018')
+		},
+		{
+			id: 6,
+			title: 'Unit tests6',
+			content: 'Some news about Unut tests.',
+			created: new Date('3/30/2018')
+		},
+		{
+			id: 7,
+			title: 'Unit tests7',
+			content: 'Some news about Unut tests.',
+			created: new Date('3/30/2018')
 		}
 	];
 
