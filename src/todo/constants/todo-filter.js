@@ -1,6 +1,7 @@
 angular.module('app')
 	.constant('todoFiltersConstant', {
 		all: 'all',
-		active: 'active',
-		completed: 'completed'
+		today: 'today',
+		lastWeek: 'lastWeek',
+		lastMonth: 'lastMonth'
 	});

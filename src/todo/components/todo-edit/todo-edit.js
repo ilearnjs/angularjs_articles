@@ -11,7 +11,7 @@ function todoEdit($scope, $state, $stateParams, todoStore) {
 	const id = $stateParams.todoId;
 
 	self.$onInit = () => {
-		self.editTodo = Object.assign({}, todoStore.getById(id));
+		self.todo = Object.assign({}, todoStore.getById(id));
 	};
 
 	self.submitForm = (isValid) => {
@@ -20,7 +20,7 @@ function todoEdit($scope, $state, $stateParams, todoStore) {
 			return;
 		}
 
-		todoStore.editTodo(id, self.editTodo);
+		todoStore.editTodo(id, self.todo);
 		$state.go('todo.all');
 	};
 }

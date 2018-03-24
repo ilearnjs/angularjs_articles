@@ -1,7 +1,8 @@
 <div class="todo-filters">
 	<a href ui-sref="todo.all" ui-sref-active="selected">All</a>
-	<a href ui-sref="todo.active" ui-sref-active="selected">Active</a>
-	<a href ui-sref="todo.completed" ui-sref-active="selected">Completed</a>
+	<a href ui-sref="todo.today" ui-sref-active="selected">Toaday</a>
+	<a href ui-sref="todo.lastWeek" ui-sref-active="selected">Last Week</a>
+	<a href ui-sref="todo.lastMonth" ui-sref-active="selected">Last Month</a>
 </div>
 
 <div ng-if="$ctrl.list.length">

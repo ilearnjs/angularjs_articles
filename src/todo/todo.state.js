@@ -13,19 +13,30 @@ angular.module('app')
 					filter: (todoFiltersConstant) => todoFiltersConstant.all
 				}
 			})
-			.state('todo.active', {
-				url: 'active',
+			.state('todo.today', {
+				url: 'today',
 				component: 'todoContainerComponent',
 				resolve: {
-					filter: (todoFiltersConstant) => todoFiltersConstant.active
+					filter: (todoFiltersConstant) => todoFiltersConstant.today
 				}
 			})
-			.state('todo.completed', {
-				url: 'completed',
+			.state('todo.lastWeek', {
+				url: 'lastWeek',
 				component: 'todoContainerComponent',
 				resolve: {
-					filter: (todoFiltersConstant) => todoFiltersConstant.completed
+					filter: (todoFiltersConstant) => todoFiltersConstant.lastWeek
 				}
+			})
+			.state('todo.lastMonth', {
+				url: 'lastMonth',
+				component: 'todoContainerComponent',
+				resolve: {
+					filter: (todoFiltersConstant) => todoFiltersConstant.lastMonth
+				}
+			})
+			.state('todo.view', {
+				url: 'view/{todoId:int}',
+				component: 'todoViewContainer',
 			})
 			.state('todo.new', {
 				url: 'new',

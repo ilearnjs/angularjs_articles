@@ -46,8 +46,9 @@ function todoContainer($scope, todoStore, todoFiltersConstant) {
 	function getFilteredTodoList(todoList, filter) {
 		let predicates = {
 			[todoFiltersConstant.all]: (todoItem) => true,
-			[todoFiltersConstant.active]: (todoItem) => !todoItem.completed,
-			[todoFiltersConstant.completed]: (todoItem) => todoItem.completed,
+			[todoFiltersConstant.today]: (todoItem) => todoItem.created > addDays(-1),
+			[todoFiltersConstant.lastWeek]: (todoItem) => todoItem.created > addDays(-7),
+			[todoFiltersConstant.lastMonth]: (todoItem) => todoItem.created > addMonth(-1),
 		};
 
 		return todoList.filter(predicates[filter]);
@@ -69,5 +70,17 @@ function todoContainer($scope, todoStore, todoFiltersConstant) {
 		const direction = self.sortField.direction;
 
 		return todoList.sort((a, b) => ((a[field] > b[field]) - 0.5) * direction); // ¯\_(ツ)_/¯
+	}
+
+	function addDays(daysCount = 1) {
+		var date = new Date();
+		date.setDate(date.getDate() + daysCount);
+		return date;
+	}
+
+	function addMonth(monthCount = 1) {
+		var date = new Date();
+		date.setMonth(date.getMonth() + monthCount);
+		return date;
 	}
 }
