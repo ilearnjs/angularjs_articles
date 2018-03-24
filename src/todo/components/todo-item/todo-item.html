@@ -1,27 +1,21 @@
-<div ng-class="{'editing': $ctrl.editing, 'completed': $ctrl.completed}">
-	<div
-		class="view"
-	>
-		<sapn class="created">
-			{{$ctrl.item.created.toLocaleDateString()}}
-		</sapn>
-		<sapn class="title">
-			{{$ctrl.item.title}}
-		</sapn>
-		<a ui-sref="todo.view({todoId: $ctrl.item.id})">
-			Read
-		</a>
-		<button
-			ui-sref="todo.edit({todoId: $ctrl.item.id})"
-			class="edit"
-		>
-			Edit
-		</button>
-		<button
-			class="delete"
-			ng-click="$ctrl.deleteTodo()"
-		>
-			Delete
-		</button>
-	</div>
-</div>
+<sapn class="created">
+	{{$ctrl.item.created.toLocaleDateString()}}
+</sapn>
+<sapn class="title">
+	{{$ctrl.item.title}}
+</sapn>
+<a ui-sref="todo.view({todoId: $ctrl.item.id})">
+	Read
+</a>
+<button
+	ui-sref="todo.edit({todoId: $ctrl.item.id})"
+	class="edit"
+>
+	Edit
+</button>
+<button
+	class="delete"
+	ng-click="$ctrl.deleteTodo()"
+>
+	Delete
+</button>

@@ -1,60 +1,58 @@
-<div>
-	<form
-		novalidate
-		name="todoEditForm"
-		class="todo-edit-form"
-		ng-submit="$ctrl.submitForm(todoEditForm.$valid)"
-	>
-		<div>
-			<label>Title</label>
-			<input
-				name="title"
-				class="title"
-				ng-model="$ctrl.todo.title"
-				required
-				ng-minlength="5"
-			/>
-			<span 
-				ng-show="$ctrl.submitted && todoEditForm.title.$error.required"
-				class="validation-error"
-			>
-				Title is required.
-			</span>
-			<span 
-				ng-show="$ctrl.submitted && todoEditForm.title.$error.minlength"
-				class="validation-error"
-			>
-				Title is too short (min 5 symbols).
-			</span>
-		</div>
-		<div>
-			<div>
-				<label>Content</label>
-				<textarea
-					name="content"
-					class="content"
-					ng-model="$ctrl.todo.content"
-					required
-					ng-minlength="20"
-				></textarea>
-				<span
-					ng-show="$ctrl.submitted && todoNewForm.content.$error.required"
-					class="validation-error"
-				>
-					content is required.
-				</span>
-				<span
-					ng-show="$ctrl.submitted && todoNewForm.content.$error.minlength"
-					class="validation-error"
-				>
-					Content is too short (min 20 symbols).
-				</span>
-			</div>
-		</div>
+<form
+	novalidate
+	name="todoEditForm"
+	class="todo-edit-form"
+	ng-submit="$ctrl.submitForm(todoEditForm.$valid)"
+>
+	<div>
+		<label>Title</label>
 		<input
-			type="submit"
-			value="Edit"
-			class="submit"
+			name="title"
+			class="title"
+			ng-model="$ctrl.todo.title"
+			required
+			ng-minlength="5"
 		/>
-	</form>
-</div>
+		<span 
+			ng-show="$ctrl.submitted && todoEditForm.title.$error.required"
+			class="validation-error"
+		>
+			Title is required.
+		</span>
+		<span 
+			ng-show="$ctrl.submitted && todoEditForm.title.$error.minlength"
+			class="validation-error"
+		>
+			Title is too short (min 5 symbols).
+		</span>
+	</div>
+	<div>
+		<div>
+			<label>Content</label>
+			<textarea
+				name="content"
+				class="content"
+				ng-model="$ctrl.todo.content"
+				required
+				ng-minlength="20"
+			></textarea>
+			<span
+				ng-show="$ctrl.submitted && todoNewForm.content.$error.required"
+				class="validation-error"
+			>
+				Сontent is required.
+			</span>
+			<span
+				ng-show="$ctrl.submitted && todoNewForm.content.$error.minlength"
+				class="validation-error"
+			>
+				Content is too short (min 20 symbols).
+			</span>
+		</div>
+	</div>
+	<input
+		type="submit"
+		value="Edit"
+		class="submit"
+	/>
+</form>

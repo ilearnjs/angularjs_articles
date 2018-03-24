@@ -1,28 +1,26 @@
-<div class="pagination">
+<span>
+	Total count: {{$ctrl.totalCount}}
+</span>
+<span ng-if="$ctrl.showPagination">
+	<span
+		ng-if="$ctrl.showPrev"
+		ng-click="$ctrl.prev()"
+	>
+		&lt;
+	</span>
 	<span>
-		Total count: {{$ctrl.totalCount}}
-	</span>
-	<span ng-if="$ctrl.showPagination">
-		<span
-			ng-if="$ctrl.showPrev"
-			ng-click="$ctrl.prev()"
+		<span 
+			ng-repeat="page in $ctrl.pages"
+			ng-click="$ctrl.gotoPage(page)"
+			ng-class="$ctrl.currentPage === page ? 'current' : ''"
 		>
-			&lt;
-		</span>
-		<span>
-			<span 
-				ng-repeat="page in $ctrl.pages"
-				ng-click="$ctrl.gotoPage(page)"
-				ng-class="$ctrl.currentPage === page ? 'current' : ''"
-			>
-				{{page}}
-			</span>
-		</span>
-		<span
-			ng-if="$ctrl.showNext"
-			ng-click="$ctrl.next()"
-		>
-			&gt;
+			{{page}}
 		</span>
 	</span>
-</div>
+	<span
+		ng-if="$ctrl.showNext"
+		ng-click="$ctrl.next()"
+	>
+		&gt;
+	</span>
+</span>

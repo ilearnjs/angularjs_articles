@@ -1,9 +1,9 @@
-.todo-list .created {
+todo-item-component .created {
 	width: 100px;
     display: inline-block;
 }
 
-.todo-list .title {
+todo-item-component .title {
 	width: 200px;
     display: inline-block;
 }
