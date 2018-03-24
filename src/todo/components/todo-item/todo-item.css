@@ -1,9 +1,3 @@
-.todo-list .checkbox {
-	margin: 0;
-	width: 20px;
-    display: inline-block;
-}
-
 .todo-list .created {
 	width: 100px;
     display: inline-block;

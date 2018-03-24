@@ -35,10 +35,6 @@ function todoContainer($scope, todoStore, todoFiltersConstant) {
 		todoStore.deleteTodo(event.id);
 	};
 
-	self.toggleTodo = event => {
-		todoStore.toggleTodo(event.id);
-	};
-
 	self.sort = event => {
 		self.todoList = getSortedTodoList(self.todoList, event.sortField);
 	};

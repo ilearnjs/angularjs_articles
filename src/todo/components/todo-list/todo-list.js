@@ -7,7 +7,6 @@ angular.module('app')
 		bindings: {
 			list: '<',
 			onDelete: '&',
-			onToggle: '&',
 			onSort: '&',
 		}
 	});
@@ -17,14 +16,6 @@ function todoList() {
 
 	self.deleteTodo = event => {
 		self.onDelete({
-			$event: {
-				id: event.id
-			}
-		});
-	};
-
-	self.toggleTodo = event => {
-		self.onToggle({
 			$event: {
 				id: event.id
 			}

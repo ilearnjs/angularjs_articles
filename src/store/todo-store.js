@@ -62,13 +62,6 @@ function todoStore() {
 		behaviourSubject.next(todoList);
 	};
 
-	store.toggleTodo = id => {
-		const todo = find(id);
-		todo.completed = !todo.completed;
-		todo.completedOn = todo.completed ? new Date() : null;
-		behaviourSubject.next(todoList);
-	};
-
 	function find(id) {
 		return todoList.find(todo => todo.id === id);
 	}

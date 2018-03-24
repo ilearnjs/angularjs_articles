@@ -7,8 +7,6 @@
 
 <div ng-if="$ctrl.list.length">
 	<div class="todo-list-header">
-		<span class="checkbox">
-		</span>
 		<span
 			ng-click="$ctrl.sort({field: 'created', direction: -1})"
 			class="created"
@@ -30,9 +28,7 @@
 				completed="todo.completed"
 				on-delete="$ctrl.deleteTodo($event)"
 				on-update="$ctrl.updateTodo($event)"
-				on-toggle="$ctrl.toggleTodo($event)"
 			></todo-item-component>
 		</div>
 	</div>
 </div>
-  

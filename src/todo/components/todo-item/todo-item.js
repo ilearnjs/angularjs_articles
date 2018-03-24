@@ -9,7 +9,6 @@ angular.module('app')
 			completed: '<',
 			onDelete: '&',
 			onUpdate: '&',
-			onToggle: '&'
 		}
 	});
 
@@ -23,12 +22,4 @@ function todoItem() {
 			}
 		});
 	};
-
-	self.toggleTodo = () => {
-		self.onToggle({
-			$event: {
-				id: self.item.id
-			}
-		});
-	};
-}  
+}
