@@ -14,6 +14,7 @@ function todoNew($scope, $state, todoStore) {
 	self.$onInit = () => {
 		self.newTodo = {
 			title: '',
+			content: '',
 		};
 	};
 

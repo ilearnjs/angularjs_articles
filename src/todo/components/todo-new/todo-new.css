@@ -2,6 +2,12 @@
 	margin: 20px;
 }
 
+.todo-new-form label {
+	width: 60px;
+	display: inline-block;
+}
+
+
 .todo-new-form .submit {
 	display: block;
 	margin: 10px 0;
