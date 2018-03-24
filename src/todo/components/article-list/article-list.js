@@ -1,9 +1,9 @@
-require('./todo-list.css');
+require('./article-list.css');
 
 angular.module('app')
-	.component('todoListComponent', {
-		controller: todoList,
-		template: require('./todo-list.html'),
+	.component('articleListComponent', {
+		controller: articleList,
+		template: require('./article-list.html'),
 		bindings: {
 			list: '<',
 			onDelete: '&',
@@ -11,10 +11,10 @@ angular.module('app')
 		}
 	});
 
-function todoList() {
+function articleList() {
 	const self = this;
 
-	self.deleteTodo = event => {
+	self.deleteArticle = event => {
 		self.onDelete({
 			$event: {
 				id: event.id

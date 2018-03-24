@@ -1,26 +1,26 @@
 <form
 	novalidate
-	name="todoNewForm"
-	class="todo-new-form"
-	ng-submit="$ctrl.submitForm(todoNewForm.$valid)"
+	name="articleNewForm"
+	class="article-new-form"
+	ng-submit="$ctrl.submitForm(articleNewForm.$valid)"
 >
 	<div>
 		<label>Title</label>
 		<input
 			name="title"
 			class="title"
-			ng-model="$ctrl.newTodo.title"
+			ng-model="$ctrl.newArticle.title"
 			required
 			ng-minlength="5"
 		/>
 		<span
-			ng-show="$ctrl.submitted && todoNewForm.title.$error.required"
+			ng-show="$ctrl.submitted && articleNewForm.title.$error.required"
 			class="validation-error"
 		>
 			Title is required.
 		</span>
 		<span
-			ng-show="$ctrl.submitted && todoNewForm.title.$error.minlength"
+			ng-show="$ctrl.submitted && articleNewForm.title.$error.minlength"
 			class="validation-error"
 		>
 			Title is too short (min 5 symbols).
@@ -31,18 +31,18 @@
 		<textarea
 			name="content"
 			class="content"
-			ng-model="$ctrl.newTodo.content"
+			ng-model="$ctrl.newArticle.content"
 			required
 			ng-minlength="20"
 		></textarea>
 		<span
-			ng-show="$ctrl.submitted && todoNewForm.content.$error.required"
+			ng-show="$ctrl.submitted && articleNewForm.content.$error.required"
 			class="validation-error"
 		>
 			Сontent is required.
 		</span>
 		<span
-			ng-show="$ctrl.submitted && todoNewForm.content.$error.minlength"
+			ng-show="$ctrl.submitted && articleNewForm.content.$error.minlength"
 			class="validation-error"
 		>
 			Content is too short (min 20 symbols).

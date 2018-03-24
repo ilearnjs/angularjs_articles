@@ -1,0 +1,14 @@
+article-new-component .article-new-form {
+	margin: 20px;
+}
+
+article-new-component .article-new-form label {
+	width: 60px;
+	display: inline-block;
+}
+
+
+article-new-component .article-new-form .submit {
+	display: block;
+	margin: 10px 0;
+}

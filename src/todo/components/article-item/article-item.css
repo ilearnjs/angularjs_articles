@@ -1,9 +1,9 @@
-todo-item-component .created {
+article-item-component .created {
 	width: 100px;
     display: inline-block;
 }
 
-todo-item-component .title {
+article-item-component .title {
 	width: 200px;
     display: inline-block;
 }

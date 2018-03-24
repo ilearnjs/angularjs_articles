@@ -1,0 +1,13 @@
+article-list-component .article-filters {
+	margin: 10px 0;
+}
+
+article-list-component .article-list-header .created {
+	width: 100px;
+    display: inline-block;
+}
+
+article-list-component .article-list-header .title {
+	width: 200px;
+    display: inline-block;
+}

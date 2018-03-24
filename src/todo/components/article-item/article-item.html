@@ -4,18 +4,18 @@
 <sapn class="title">
 	{{$ctrl.item.title}}
 </sapn>
-<a ui-sref="todo.view({todoId: $ctrl.item.id})">
+<a ui-sref="article.view({articleId: $ctrl.item.id})">
 	Read
 </a>
 <button
-	ui-sref="todo.edit({todoId: $ctrl.item.id})"
+	ui-sref="article.edit({articleId: $ctrl.item.id})"
 	class="edit"
 >
 	Edit
 </button>
 <button
 	class="delete"
-	ng-click="$ctrl.deleteTodo()"
+	ng-click="$ctrl.deleteArticle()"
 >
 	Delete
 </button>

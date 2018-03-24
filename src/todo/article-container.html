@@ -1,20 +1,20 @@
-<div class="todo-new">
-	<a href ui-sref="todo.new">Add new</a>	
+<div class="article-new">
+	<a href ui-sref="article.new">Add new</a>	
 </div>
 
 <div
 	ng-if="!$ctrl.noData"
 >
-	<todo-list-component
-		list="$ctrl.todoList.todoList" 
-		on-delete="$ctrl.deleteTodo($event)" 
+	<article-list-component
+		list="$ctrl.articleList.articleList" 
+		on-delete="$ctrl.deleteArticle($event)" 
 		on-sort="$ctrl.sort($event)"
-	></todo-list-component>
+	></article-list-component>
 
 	<pagination-component
 		current-page="$ctrl.pagination.currentPage"
 		items-per-page="$ctrl.pagination.itemsPerPage"
-		total-count="$ctrl.todoList.totalCount"
+		total-count="$ctrl.articleList.totalCount"
 		on-page-change="$ctrl.changePage($event)"
 	></pagination-component>
 </div>

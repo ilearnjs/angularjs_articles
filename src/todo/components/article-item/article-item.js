@@ -1,9 +1,9 @@
-require('./todo-item.css');
+require('./article-item.css');
 
 angular.module('app')
-	.component('todoItemComponent', {
-		controller: todoItem,
-		template: require('./todo-item.html'),
+	.component('articleItemComponent', {
+		controller: articleItem,
+		template: require('./article-item.html'),
 		bindings: {
 			item: '<',
 			completed: '<',
@@ -12,10 +12,10 @@ angular.module('app')
 		}
 	});
 
-function todoItem() {
+function articleItem() {
 	const self = this;
 
-	self.deleteTodo = () => {
+	self.deleteArticle = () => {
 		self.onDelete({
 			$event: {
 				id: self.item.id

@@ -1,5 +1,5 @@
 angular.module('app')
-	.constant('todoFiltersConstant', {
+	.constant('articleFiltersConstant', {
 		all: 'all',
 		today: 'today',
 		lastWeek: 'lastWeek',

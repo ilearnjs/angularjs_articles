@@ -1,0 +1,8 @@
+article-edit-component .article-edit-form {
+	margin: 20px;
+}
+
+article-edit-component .article-edit-form .submit {
+	display: block;
+	margin: 10px 0;
+}

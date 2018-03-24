@@ -1,0 +1,34 @@
+<div class="article-filters">
+	<a href ui-sref="article.all" ui-sref-active="selected">All</a>
+	<a href ui-sref="article.today" ui-sref-active="selected">Toaday</a>
+	<a href ui-sref="article.lastWeek" ui-sref-active="selected">Last Week</a>
+	<a href ui-sref="article.lastMonth" ui-sref-active="selected">Last Month</a>
+</div>
+
+<div ng-if="$ctrl.list.length">
+	<div class="article-list-header">
+		<span
+			ng-click="$ctrl.sort({field: 'created', direction: -1})"
+			class="created"
+		>
+			Created
+		</span>
+		<span
+			ng-click="$ctrl.sort({field: 'title', direction: 1})"
+			class="title"
+		>
+			Title
+		</span>
+	</div>
+
+	<div class="article-list">
+		<div ng-repeat="article in $ctrl.list">
+		<article-item-component
+				item="article"
+				completed="article.completed"
+				on-delete="$ctrl.deleteArticle($event)"
+				on-update="$ctrl.updateArticle($event)"
+			></article-item-component>
+		</div>
+	</div>
+</div>
