@@ -36,7 +36,7 @@ angular.module('app')
 			})
 			.state('todo.view', {
 				url: 'view/{todoId:int}',
-				component: 'todoViewContainer',
+				component: 'todoViewComponent',
 			})
 			.state('todo.new', {
 				url: 'new',

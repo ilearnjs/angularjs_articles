@@ -1,7 +1,6 @@
 <div ng-class="{'editing': $ctrl.editing, 'completed': $ctrl.completed}">
 	<div
 		class="view"
-		ng-dblclick="$ctrl.enableEditing()"
 	>
 		<sapn class="created">
 			{{$ctrl.item.created.toLocaleDateString()}}
@@ -9,6 +8,9 @@
 		<sapn class="title">
 			{{$ctrl.item.title}}
 		</sapn>
+		<a ui-sref="todo.view({todoId: $ctrl.item.id})">
+			Read
+		</a>
 		<button
 			ui-sref="todo.edit({todoId: $ctrl.item.id})"
 			class="edit"
