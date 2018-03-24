@@ -62,6 +62,7 @@ function todoStore() {
 	store.editTodo = (id, todo) => {
 		const existingTodo = find(id);
 		existingTodo.title = todo.title;
+		existingTodo.content = todo.content;
 		behaviourSubject.next(todoList);
 	};
 

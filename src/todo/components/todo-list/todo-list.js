@@ -12,7 +12,7 @@ angular.module('app')
 	});
 
 function todoList() {
-	var self = this;
+	const self = this;
 
 	self.deleteTodo = event => {
 		self.onDelete({

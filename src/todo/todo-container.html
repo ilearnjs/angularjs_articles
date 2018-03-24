@@ -6,8 +6,15 @@
 	ng-if="!$ctrl.noData"
 >
 	<todo-list-component
-		list="$ctrl.todoList" 
+		list="$ctrl.todoList.todoList" 
 		on-delete="$ctrl.deleteTodo($event)" 
 		on-sort="$ctrl.sort($event)"
 	></todo-list-component>
+
+	<pagination-component
+		current-page="$ctrl.pagination.currentPage"
+		items-per-page="$ctrl.pagination.itemsPerPage"
+		total-count="$ctrl.todoList.totalCount"
+		on-page-change="$ctrl.changePage($event)"
+	></pagination-component>
 </div>

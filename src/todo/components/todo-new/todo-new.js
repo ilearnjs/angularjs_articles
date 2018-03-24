@@ -7,7 +7,7 @@ angular.module('app')
 	});
 
 function todoNew($scope, $state, todoStore) {
-	var self = this;
+	const self = this;
 
 	self.submitted = false;
 
