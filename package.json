@@ -5,8 +5,8 @@
     "dev-server": "webpack-dev-server --mode=development --history-api-fallback"
   },
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
-    "angular-ui-router": "^1.0.3",
     "rxjs": "^5.5.7"
   },
   "devDependencies": {
