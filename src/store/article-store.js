@@ -8,44 +8,32 @@ function articleStore() {
 		{
 			id: 1,
 			title: 'React',
-			content: 'Some news about React.',
-			created: new Date('3/10/2018')
+			content: 'Some news about React. And content must be long enough.',
+			created: new Date('2/10/2018')
 		},
 		{
 			id: 2,
 			title: 'Angular',
-			content: 'Some news about Angular.',
+			content: 'Some news about Angular. And content must be long enough.',
 			created: new Date('3/18/2018')
 		},
 		{
 			id: 3,
 			title: 'Unit tests',
-			content: 'Some news about Unut tests.',
-			created: new Date('3/30/2018')
+			content: 'Some news about Unut tests. And content must be long enough',
+			created: new Date('3/22/2018')
 		},
 		{
 			id: 4,
-			title: 'Unit tests4',
-			content: 'Some news about Unut tests.',
-			created: new Date('3/30/2018')
+			title: 'Breakin news',
+			content: 'Some Breakin news. And content must be long enough',
+			created: new Date('3/25/2018')
 		},
 		{
 			id: 5,
-			title: 'Unit tests5',
-			content: 'Some news about Unut tests.',
-			created: new Date('3/30/2018')
-		},
-		{
-			id: 6,
-			title: 'Unit tests6',
-			content: 'Some news about Unut tests.',
-			created: new Date('3/30/2018')
-		},
-		{
-			id: 7,
-			title: 'Unit tests7',
-			content: 'Some news about Unut tests.',
-			created: new Date('3/30/2018')
+			title: 'Latest news',
+			content: 'Some Latest news. And content must be long enough',
+			created: new Date('3/27/2018')
 		}
 	];
 

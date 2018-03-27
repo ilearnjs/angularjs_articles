@@ -25,7 +25,7 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 
 	self.pagination = {
 		currentPage: 1,
-		itemsPerPage: 5
+		itemsPerPage: 2
 	};
 
 	self.$onInit = () => {
