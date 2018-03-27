@@ -1,25 +1,35 @@
-article-list-component .article-filters {
-	margin: 10px 0;
+article-list-component .row span {
+	position: relative;
 }
 
-article-list-component .article-list-header .created {
-	width: 100px;
-	display: inline-block;
+article-list-component .sortable:hover {
+	cursor: pointer;
 }
 
-article-list-component .article-list-header .title {
-	width: 200px;
-	display: inline-block;
+article-list-component .sorting:before,
+article-list-component .sorting_desc:before,
+article-list-component .sorting_asc:before
+{
+	content: "\2191";
+	position: absolute;
+	right: -1rem;
+	opacity: 0.3;
 }
 
-article-list-component .article-list-header .active {
-	border: 1px solid black;
+article-list-component .sorting:after,
+article-list-component .sorting_asc:after,
+article-list-component .sorting_desc:after
+{
+	content: "\2193";
+	position: absolute;
+	right: -1.5em;
+	opacity: 0.3;
 }
 
-article-list-component .article-list-header .active.acs:after {
-	content: "A-Z";
+article-list-component .sorting_asc:after {
+	opacity: 1;
 }
 
-article-list-component .article-list-header .active.desc:after {
-	content: "Z-A";
+article-list-component .sorting_desc:before {
+	opacity: 1;
 }

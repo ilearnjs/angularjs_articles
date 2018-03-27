@@ -1,24 +1,28 @@
-<sapn class="created">
+<div class="col-3">
 	{{$ctrl.item.created.toLocaleDateString()}}
-</sapn>
-<sapn class="title">
+</div>
+<div class="col-5">
 	{{$ctrl.item.title}}
-</sapn>
-<button
-	ui-sref="article.view({articleId: $ctrl.item.id})"
-	class="read"
->
-	Read
-</button>
-<button
-	ui-sref="article.edit({articleId: $ctrl.item.id})"
-	class="edit"
->
-	Edit
-</button>
-<button
-	class="delete"
-	ng-click="$ctrl.deleteArticle()"
->
-	Delete
-</button>
+</div>
+<div class="col-4">
+	<div class="btn-group">
+		<button
+			ui-sref="article.view({articleId: $ctrl.item.id})"
+			class="btn btn-sm btn-outline-primary"
+		>
+			Read
+		</button>
+		<button
+			ui-sref="article.edit({articleId: $ctrl.item.id})"
+			class="btn btn-sm btn-outline-primary"
+		>
+			Edit
+		</button>
+		<button
+			ng-click="$ctrl.deleteArticle()"
+			class="btn btn-sm btn-outline-primary"
+		>
+			Delete
+		</button>
+	</div>
+</div>

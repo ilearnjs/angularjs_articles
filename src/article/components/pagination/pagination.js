@@ -19,8 +19,8 @@ function pagination() {
 		self.showPagination = self.totalCount > self.itemsPerPage;
 
 		const pagesCount = Math.ceil(self.totalCount / self.itemsPerPage);
-		self.showPrev = self.currentPage > 1;
-		self.showNext = self.currentPage < pagesCount;
+		self.prevEnabled = self.currentPage > 1;
+		self.nextEnabled = self.currentPage < pagesCount;
 
 		const navPagesCount = 5;
 		const from = Math.max(1, self.currentPage - Math.floor(navPagesCount / 2));

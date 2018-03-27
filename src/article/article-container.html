@@ -1,21 +1,27 @@
-<div class="article-new">
-	<a href ui-sref="article.new">Add new</a>	
-</div>
+<div class="container">
+	<div class="row">
+		<a 
+			href 
+			ui-sref="article.new"
+			class="btn btn-outline-primary"
+		>Add new</a>	
+	</div>
 
-<div
-	ng-if="!$ctrl.noData"
->
-	<article-list-component
-		sort-field="$ctrl.sortField"
-		list="$ctrl.articleList.articleList" 
-		on-delete="$ctrl.deleteArticle($event)" 
-		on-sort="$ctrl.sort($event)"
-	></article-list-component>
+	<div
+		ng-if="!$ctrl.noData"
+	>
+		<article-list-component
+			sort-field="$ctrl.sortField"
+			list="$ctrl.articleList.articleList" 
+			on-delete="$ctrl.deleteArticle($event)" 
+			on-sort="$ctrl.sort($event)"
+		></article-list-component>
 
-	<pagination-component
-		current-page="$ctrl.pagination.currentPage"
-		items-per-page="$ctrl.pagination.itemsPerPage"
-		total-count="$ctrl.articleList.totalCount"
-		on-page-change="$ctrl.changePage($event)"
-	></pagination-component>
+		<pagination-component
+			current-page="$ctrl.pagination.currentPage"
+			items-per-page="$ctrl.pagination.itemsPerPage"
+			total-count="$ctrl.articleList.totalCount"
+			on-page-change="$ctrl.changePage($event)"
+		></pagination-component>
+	</div>
 </div>

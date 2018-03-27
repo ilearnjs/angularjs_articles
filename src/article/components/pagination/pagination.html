@@ -1,26 +1,44 @@
-<span>
-	Total count: {{$ctrl.totalCount}}
-</span>
-<span ng-if="$ctrl.showPagination">
-	<span
-		ng-if="$ctrl.showPrev"
-		ng-click="$ctrl.prev()"
+<div class="row">
+	<div class="col-5">
+		Total count: {{$ctrl.totalCount}}
+	</div>
+	<div
+		ng-if="$ctrl.showPagination"
+		class="col-7"
 	>
-		&lt;
-	</span>
-	<span>
-		<span 
-			ng-repeat="page in $ctrl.pages"
-			ng-click="$ctrl.gotoPage(page)"
-			ng-class="$ctrl.currentPage === page ? 'current' : ''"
-		>
-			{{page}}
-		</span>
-	</span>
-	<span
-		ng-if="$ctrl.showNext"
-		ng-click="$ctrl.next()"
-	>
-		&gt;
-	</span>
-</span>
+		<ul class="pagination pagination-sm">
+			<li 
+				ng-click="!$ctrl.prevEnabled || $ctrl.prev()"
+				class="page-item"
+				ng-class="$ctrl.prevEnabled ? '' : 'disabled'"
+			>
+				<span 
+					class="page-link"
+				>
+					&lt;
+				</span>
+			</li>
+			<li
+				ng-repeat="page in $ctrl.pages"
+				ng-click="$ctrl.gotoPage(page)"
+				class="page-item"
+				ng-class="$ctrl.currentPage === page ? 'active' : ''"
+			>
+				<span class="page-link">
+					{{page}}
+				</span>
+			</li>
+			<li 
+				ng-click="!$ctrl.nextEnabled || $ctrl.next()"
+				class="page-item"
+				ng-class="$ctrl.nextEnabled ? '' : 'disabled'"
+			>
+				<span 
+					class="page-link"
+				>
+					&gt;
+				</span>
+			</li>
+		</ul>
+	</div>
+</div>

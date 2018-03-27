@@ -1,36 +1,72 @@
-<div class="article-filters">
-	<a href ui-sref="article.all" ui-sref-active="selected">All</a>
-	<a href ui-sref="article.today" ui-sref-active="selected">Toaday</a>
-	<a href ui-sref="article.lastWeek" ui-sref-active="selected">Last Week</a>
-	<a href ui-sref="article.lastMonth" ui-sref-active="selected">Last Month</a>
-</div>
+<ul class="nav nav-pills">
+	<li class="nav-item">
+		<a
+			href
+			class="nav-link" 
+			ui-sref="article.all" 
+			ui-sref-active="active"
+		>
+			All
+		</a>
+	</li>
+	<li class="nav-item">
+		<a
+			href
+			class="nav-link" 
+			ui-sref="article.today" 
+			ui-sref-active="active"
+		>
+			Toaday
+		</a>
+	</li>
+	<li class="nav-item">
+		<a
+			href 
+			class="nav-link"
+			ui-sref="article.lastWeek" 
+			ui-sref-active="active"
+		>
+			Last Week
+		</a>
+	</li>
+	<li class="nav-item">
+		<a
+			href 
+			class="nav-link"
+			ui-sref="article.lastMonth" 
+			ui-sref-active="active"
+		>
+			Last Month
+		</a>
+	</li>
+</ul>
 
 <div ng-if="$ctrl.list.length">
-	<div class="article-list-header">
-		<span
+	<div class="row">
+		<div
 			ng-click="$ctrl.sort({field: 'created', direction: -1})"
-			class="created"
-			ng-class="$ctrl.getClasses('created')"
+			class="col-3 sortable"
 		>
-			Created
-		</span>
-		<span
+			<span ng-class="$ctrl.getClasses('created')">
+				Created
+			</span>
+		</div>
+		<div
 			ng-click="$ctrl.sort({field: 'title', direction: 1})"
-			class="title"
-			ng-class="$ctrl.getClasses('title')"
+			class="col-5 sortable"
 		>
-			Title
-		</span>
-	</div>
-
-	<div class="article-list">
-		<div ng-repeat="article in $ctrl.list">
-		<article-item-component
-				item="article"
-				completed="article.completed"
-				on-delete="$ctrl.deleteArticle($event)"
-				on-update="$ctrl.updateArticle($event)"
-			></article-item-component>
+			<span ng-class="$ctrl.getClasses('title')">
+				Title
+			</span>
 		</div>
 	</div>
+
+	<article-item-component
+		ng-repeat="article in $ctrl.list"
+		class="row"
+		item="article"
+		completed="article.completed"
+		on-delete="$ctrl.deleteArticle($event)"
+		on-update="$ctrl.updateArticle($event)"
+	></article-item-component>
 </div>

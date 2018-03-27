@@ -32,12 +32,16 @@ function articleList() {
 	};
 
 	self.getClasses = (field) => {
+		const sorting = 'sorting';
+
 		if (self.sortField.field === field) {
 			const direction = self.sortField.direction > 0
-				? 'acs'
+				? 'asc'
 				: 'desc';
 
-			return `active ${direction}`;
+			return `${sorting}_${direction}`;
 		}
+
+		return sorting;
 	}
 }
