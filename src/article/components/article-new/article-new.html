@@ -1,56 +1,60 @@
 <form
 	novalidate
 	name="articleNewForm"
-	class="article-new-form"
 	ng-submit="$ctrl.submitForm(articleNewForm.$valid)"
 >
-	<div>
-		<label>Title</label>
+	<div class="form-group">
+		<label for="title">Title</label>
 		<input
+			id="title"
 			name="title"
-			class="title"
+			class="form-control"
+			ng-class="$ctrl.submitted && !articleNewForm.title.$valid ? 'is-invalid' : ''"
 			ng-model="$ctrl.newArticle.title"
 			required
 			ng-minlength="5"
 		/>
-		<span
+		<div
 			ng-show="$ctrl.submitted && articleNewForm.title.$error.required"
-			class="validation-error"
+			class="invalid-feedback"
 		>
 			Title is required.
-		</span>
-		<span
+		</div>
+		<div
 			ng-show="$ctrl.submitted && articleNewForm.title.$error.minlength"
-			class="validation-error"
+			class="invalid-feedback"
 		>
 			Title is too short (min 5 symbols).
-		</span>
+		</div>
 	</div>
-	<div>
-		<label>Content</label>
+	<div class="form-group">
+		<label for="content">Content</label>
 		<textarea
+			id="content"
 			name="content"
-			class="content"
+			class="form-control"
+			ng-class="$ctrl.submitted && !articleNewForm.content.$valid ? 'is-invalid' : ''"
 			ng-model="$ctrl.newArticle.content"
 			required
 			ng-minlength="20"
+			rows="3"
 		></textarea>
-		<span
+		<div
 			ng-show="$ctrl.submitted && articleNewForm.content.$error.required"
-			class="validation-error"
+			class="invalid-feedback"
 		>
 			Сontent is required.
-		</span>
-		<span
+		</div>
+		<div
 			ng-show="$ctrl.submitted && articleNewForm.content.$error.minlength"
-			class="validation-error"
+			class="invalid-feedback"
 		>
 			Content is too short (min 20 symbols).
-		</span>
+		</div>
 	</div>
 	<input
 		type="submit"
 		value="Add"
-		class="submit"
+		class="btn btn-outline-primary"
 	/>
 </form>

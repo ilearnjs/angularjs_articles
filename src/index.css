@@ -5,10 +5,5 @@ body {
 .article-app {
 	display: block;
 	width: 800px;
-    margin: auto;
-}
-
-.validation-error {
-	margin: 10px 0;
-	color: red;
+	margin: auto;
 }
