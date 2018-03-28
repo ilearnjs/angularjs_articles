@@ -25,11 +25,12 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 
 	self.pagination = {
 		currentPage: 1,
-		itemsPerPage: 2
+		itemsPerPage: 5
 	};
 
 	self.$onInit = () => {
 		subs['articleList'] = articleStore.allArticles$
+			.filter(articleList => articleList != null)
 			.subscribe(articleList => {
 				self.allArticles = articleList;
 				self.noData = !articleList.length;
@@ -77,8 +78,8 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 	function getFilteredArticleList(articleList, filter) {
 		let predicates = {
 			[articleFiltersConstant.all]: (articleItem) => true,
-			[articleFiltersConstant.today]: (articleItem) => articleItem.created > addDays(-1),
-			[articleFiltersConstant.lastWeek]: (articleItem) => articleItem.created > addDays(-7),
+			[articleFiltersConstant.today]: (articleItem) => articleItem.created > addDays(),
+			[articleFiltersConstant.lastWeek]: (articleItem) => articleItem.created > addDays(-6),
 			[articleFiltersConstant.lastMonth]: (articleItem) => articleItem.created > addMonth(-1),
 		};
 
@@ -100,15 +101,20 @@ function articleContainer($scope, articleStore, articleFiltersConstant) {
 		return articleList.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 	}
 
-	function addDays(daysCount) {
-		const date = new Date();
+	function addDays(daysCount = 0) {
+		let date = new Date();
 		date.setDate(date.getDate() + daysCount);
+		date.setHours(0, 0, 0, 0);
+
 		return date;
 	}
 
-	function addMonth(monthCount) {
+	function addMonth(monthCount = 0) {
 		const date = new Date();
 		date.setMonth(date.getMonth() + monthCount);
+		date.setDate(date.getDate() - 1);
+		date.setHours(0, 0, 0, 0);
+
 		return date;
 	}
 }

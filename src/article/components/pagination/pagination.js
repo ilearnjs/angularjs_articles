@@ -26,7 +26,7 @@ function pagination() {
 		const from = Math.max(1, self.currentPage - Math.floor(navPagesCount / 2));
 		const to = Math.min(pagesCount, self.currentPage + Math.floor(navPagesCount / 2));
 
-		self.pages = Array.from(new Array(to - from + 1), (x, i) => i + 1);
+		self.pages = Array.from(new Array(to - from + 1), (x, i) => i + from);
 	};
 
 	self.prev = () => {

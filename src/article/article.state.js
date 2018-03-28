@@ -35,7 +35,7 @@ angular.module('app')
 				}
 			})
 			.state('article.view', {
-				url: 'view/{articleId:int}',
+				url: 'view/{articleId}',
 				component: 'articleViewComponent',
 			})
 			.state('article.new', {
@@ -43,7 +43,7 @@ angular.module('app')
 				component: 'articleNewComponent'
 			})
 			.state('article.edit', {
-				url: 'edit/{articleId:int}',
+				url: 'edit/{articleId}',
 				component: 'articleEditComponent'
 			});
 	});

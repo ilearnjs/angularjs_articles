@@ -1,45 +1,23 @@
 angular.module('app')
 	.service('articleStore', articleStore);
 
-function articleStore() {
-	let id = 4;
+function articleStore(articleResource) {
 	const store = this;
-	const articleList = [
-		{
-			id: 1,
-			title: 'React',
-			content: 'Some news about React. And content must be long enough.',
-			created: new Date('2/10/2018')
-		},
-		{
-			id: 2,
-			title: 'Angular',
-			content: 'Some news about Angular. And content must be long enough.',
-			created: new Date('3/18/2018')
-		},
-		{
-			id: 3,
-			title: 'Unit tests',
-			content: 'Some news about Unut tests. And content must be long enough',
-			created: new Date('3/22/2018')
-		},
-		{
-			id: 4,
-			title: 'Breakin news',
-			content: 'Some Breakin news. And content must be long enough',
-			created: new Date('3/25/2018')
-		},
-		{
-			id: 5,
-			title: 'Latest news',
-			content: 'Some Latest news. And content must be long enough',
-			created: new Date('3/27/2018')
-		}
-	];
+	let articleList = [];
 
-	const behaviourSubject = new Rx.BehaviorSubject(articleList);
-
+	const behaviourSubject = new Rx.BehaviorSubject();
 	store.allArticles$ = behaviourSubject.asObservable();
+
+	articleResource.get((aticles) => {
+		articleList = aticles.articles.map(a => ({
+			id: generateUid(),
+			title: a.title,
+			content: a.description,
+			created: new Date(a.publishedAt),
+		}));
+
+		behaviourSubject.next(articleList);
+	});
 
 	store.getById = id => {
 		return find(id);
@@ -49,7 +27,7 @@ function articleStore() {
 		const newArticle = Object.assign(
 			{},
 			article, {
-				id: id++,
+				id: generateUid(),
 				created: new Date(),
 				completed: false
 			}
@@ -71,6 +49,10 @@ function articleStore() {
 		existingArticle.content = article.content;
 		behaviourSubject.next(articleList);
 	};
+
+	function generateUid() {
+		return Math.random().toString(36).substr(2, 9);
+	}
 
 	function find(id) {
 		return articleList.find(article => article.id === id);
